@@ -1,6 +1,6 @@
 #############################################################################################################
 # Challenge 1 -> A Function to get a float from the user
-
+prompt_string = "Enter a float:"
 def get_float(prompt_string: str):
     """A function that gets a float from the user and returns it.
 
@@ -11,12 +11,15 @@ def get_float(prompt_string: str):
     Returns:
         - A float converted from the user's input
     """
+    the_float_value = float(input({prompt_string}))
 
-    pass
+    return the_float_value
 
 #############################################################################################################
 # Challenge 2 -> A Function to convert miles to km
 # NOTE: 1 mile is 1.60934km
+
+distance_in_miles = float(input("Enter a distance in miles:"))
 
 def miles_to_km(distance_in_miles: float):
     """A function to convert distance from miles to km
@@ -27,11 +30,17 @@ def miles_to_km(distance_in_miles: float):
     Returns
         - a float representing the distance in kilometers
     """
+
+    multiplier = float(1.60934)
+    distance_in_km = float(distance_in_miles * multiplier)
     
-    pass
+    return distance_in_km
 
 #############################################################################################################
 # Challenge 3 -> A function to calculate the total distance run in a relay
+
+distance_per_runner = float(input("Enter distance per runner:"))
+number_of_runners = float(input("Enter number of runners:"))
 
 def relay_distance(distance_per_runner: float, number_of_runners: float):
     """A function to calculate the total distance run by a team of runners
@@ -45,8 +54,9 @@ def relay_distance(distance_per_runner: float, number_of_runners: float):
     Returns:
         - A float representing the total distance run.
     """
-    
-    pass
+    total_relay_distance = float(distance_per_runner * number_of_runners)
+    return total_relay_distance
+
 
 #############################################################################################################
 # Challenge 4 (extra tricky, no tests for this one!)
@@ -60,3 +70,13 @@ def relay_distance(distance_per_runner: float, number_of_runners: float):
 # - print the total distance run by the team, in kilometers!
 # 
 # No need for this function to accept any arguments or return any values.
+
+def challenge():
+    test_value = get_float(prompt_string)
+    print ({test_value})
+    test_value2 = miles_to_km(distance_in_miles)
+    print ({test_value2})
+    test_value3 = relay_distance(distance_per_runner, number_of_runners)
+    print ({test_value3})
+
+challenge()
